@@ -155,9 +155,9 @@
     .sidebar-container {
         position: absolute;
         top: 100px;
-        left: -300px;
+        left: -100rem;
         height: 100vh;
-        width: 250px;
+        width: 100%;
         transition: left 0.3s ease;
         z-index: 5;
         background: white;
@@ -218,5 +218,15 @@
         transform: scale(0.4);
     }
 
+    .preferences-page {
+        padding-top: 10px;
+    }
 
+    .footer {
+        display: none;
+    }
+
+    .formUser-container h2 {
+        padding: 10px;
+    }
 }

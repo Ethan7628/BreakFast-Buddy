@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { auth } from '../firebase'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { type Meal } from '../types';
+import '../styles/meals.css'
 
 interface BreakfastFormProps {
     selectedMeal?: Meal;
@@ -78,7 +79,7 @@ export const BreakfastForm = ({ selectedMeal }: BreakfastFormProps) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="drink">Choice of your Drink</label>
+                    <label htmlFor="drink">🍵Choice of your Drink</label>
                     <select
                         id="drink"
                         className="form-control"
@@ -96,7 +97,7 @@ export const BreakfastForm = ({ selectedMeal }: BreakfastFormProps) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="drink">Choose your Local Escort</label>
+                    <label htmlFor="drink">🥪 Choose your Local Escort</label>
                     <select
                         id="locals"
                         className="form-control"
@@ -114,7 +115,7 @@ export const BreakfastForm = ({ selectedMeal }: BreakfastFormProps) => {
                 </div>
 
                 <div className="form-group">
-                    <label>Dietary Restrictions</label>
+                    <label>🚫 Dietary Restrictions</label>
                     <div className="checkbox-group">
                         {dietaryOptions.map((option) => (
                             <label key={option} className="checkbox-item">
@@ -130,7 +131,7 @@ export const BreakfastForm = ({ selectedMeal }: BreakfastFormProps) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="notes">Special Notes</label>
+                    <label htmlFor="notes">📖Special Notes</label>
                     <textarea
                         id="notes"
                         className="form-control"

@@ -1,14 +1,16 @@
 .preferences-page {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 25% 1fr;
     gap: 2rem;
     padding: 0 10px;
+    width: 95%;
+    justify-self: center;
 }
 
 .sidebar-container {
     background: white;
     box-shadow: 8px 0 10px -2px rgba(0, 0, 0, 0.1);
-    width: fit-content;
+    width: 100%;
 }
 
 .meal-sidebar {
@@ -86,4 +88,135 @@
     background: white;
     border-radius: 8px;
     padding: 1.5rem;
+}
+
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 10px;
+    z-index: 10;
+}
+
+.hamburger span {
+    width: 1.5rem;
+    height: 0.25rem;
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburger.open span:first-child {
+    transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:last-child {
+    transform: rotate(-45deg);
+}
+
+/* Mobile Sidebar Behavior */
+@media (max-width: 879px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 100px;
+        left: 10px;
+    }
+
+    p {
+        font-size: small;
+    }
+
+    /* 
+    h2,
+    h1,
+    h3,
+    h4,
+    h5,
+    h6,
+    div {
+        font-;
+    } */
+
+    .sidebar-container {
+        position: absolute;
+        top: 100px;
+        left: -300px;
+        height: 100vh;
+        width: 250px;
+        transition: left 0.3s ease;
+        z-index: 5;
+        background: white;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-container.open {
+        left: 0;
+    }
+
+    .preferences-page {
+        grid-template-columns: 1fr;
+    }
+
+    .header-container {
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+        margin: auto;
+    }
+
+    .nav-links {
+        width: fit-content;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 100px;
+        right: 0;
+        margin-top: -5px;
+
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        width: fit-content;
+        text-align: center;
+        font-size: small;
+    }
+
+    .welcome {
+        background: rgba(101, 67, 33, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 40%;
+        justify-items: center;
+        align-content: center;
+        color: white;
+        padding: 10px;
+        transition: transform 0.3s ease;
+        transform: scale(0.4);
+        margin: 10px;
+    }
+
+    .welcome:hover {
+        transform: scale(0.4);
+    }
+
+
 }

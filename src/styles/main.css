@@ -50,10 +50,11 @@ body {
     padding: 10px;
     transition: transform 0.3s ease;
     transform: scale(1);
+    text-align: center;
 }
 
 .welcome:hover {
-    transform: scale(1.2);
+    transform: scale(1.02);
 }
 
 a {

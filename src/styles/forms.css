@@ -17,8 +17,10 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 40%;
+
     object-fit: cover;
+    width: auto;
+    margin: 10px;
 }
 
 .formUser-container {
@@ -61,9 +63,12 @@ select.form-control {
 
 }
 
+select.form-control option::selection {
+    background-color: black;
+    color: white;
+}
 
-
-textarea.form-control {
+select textarea.form-control {
     min-height: 100px;
     resize: vertical;
 }

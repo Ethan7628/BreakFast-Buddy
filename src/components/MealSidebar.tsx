@@ -1,4 +1,3 @@
-// src/components/MealSidebar.tsx
 import { useState, useEffect } from 'react';
 import { fetchMealsByCategory } from '../Services/mealServices';
 import { type Meal } from '../types';
@@ -18,7 +17,7 @@ export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
     useEffect(() => {
         const loadMeals = async () => {
             setLoading(true);
-            // The MealDB uses these category names
+
             const category = activeCategory === 'Breakfast' ? 'Breakfast' : 'Lunch';
             const categoryMeals = await fetchMealsByCategory(category);
             setMeals(categoryMeals);
@@ -60,7 +59,7 @@ export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
                         </div>
                     ))
                 ) : (
-                    <div className="no-meals">No meals found</div>
+                    <div className="no-meals">Lunch soon lauching</div>
                 )}
             </div>
         </div>

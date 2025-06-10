@@ -34,15 +34,15 @@ export const Preferences = () => {
                 </button>
             )}
 
-            {/* Sidebar */}
+
             <div className={`sidebar-container ${isMobile ? (sidebarOpen ? 'open' : 'closed') : ''}`}>
                 <MealSidebar onSelectMeal={(meal) => {
                     setSelectedMeal(meal);
-                    if (isMobile) setSidebarOpen(false); // Auto-close sidebar after selection
+                    if (isMobile) setSidebarOpen(false);
                 }} />
             </div>
 
-            {/* Main Content */}
+
             <div className="form-container">
                 <BreakfastForm selectedMeal={selectedMeal || undefined} />
             </div>

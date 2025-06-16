@@ -17,7 +17,7 @@ const drinkOptions = ["☕Coffee", "🧃Juice", "💧Water", "🥛Milk", "☕Tea
 const localEdibles = ["Cassava", "Bread-Bans", "Boiled Eggs", "Samosa", "Bundanzi", "Yellow Banana"];
 const dietaryOptions = ["Gluten-Free", "Dairy-Free", "Nut-Free"];
 
-export const BreakfastForm = ({ selectedMeal }: BreakfastFormProps) => {
+export const BreakfastForm = ({ }: BreakfastFormProps) => {
     const [user] = useAuthState(auth);
     const [formData, setFormData] = useState({
         origin: "",

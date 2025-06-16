@@ -62,7 +62,7 @@ export const BreakfastForm = ({ }: BreakfastFormProps) => {
         try {
             await addDoc(collection(db, "preferences"), {
                 userId: user.uid,
-                userName: user.displayName || "Anonymous",
+                userName: user.email || "Anonymous",
                 date: new Date().toISOString().split('T')[0],
                 tower: formData.origin,
                 meal: formData.locals,

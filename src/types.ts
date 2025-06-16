@@ -31,4 +31,6 @@ export interface Meal {
     strCategory?: string;
 }
 
+
+
 // Add this to your existing types.ts file

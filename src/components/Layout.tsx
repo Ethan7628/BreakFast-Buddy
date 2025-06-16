@@ -27,7 +27,7 @@ export const Layout = () => {
                             <>
                                 <Link to="/preferences">Preferences</Link>
                                 <Link to="/dashboard">Dashboard</Link>
-                                <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
+                                <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'red', cursor: 'pointer' }}>
                                     Logout
                                 </button>
                             </>

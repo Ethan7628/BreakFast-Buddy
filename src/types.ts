@@ -6,7 +6,7 @@ export interface User {
 }
 
 export interface BreakfastPreference {
-    id?: string; // Optional because Firestore will auto-generate this
+    id?: string;
     userId: string;
     userName: string;
     date: string; // Format: YYYY-MM-DD
@@ -14,7 +14,7 @@ export interface BreakfastPreference {
     drink: string;
     dietaryRestrictions: string[];
     specialNotes: string;
-    createdAt?: Date; // Optional because Firestore will auto-set this
+    createdAt?: Date;
 }
 
 export interface DashboardStats {
@@ -24,7 +24,6 @@ export interface DashboardStats {
     popularDrink: string;
 }
 
-// src/types.ts
 export interface Meal {
     idMeal: string;
     strMeal: string;

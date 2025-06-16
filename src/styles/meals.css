@@ -16,7 +16,7 @@
 .meal-sidebar {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 90vh;
     width: 100%;
 }
 
@@ -58,6 +58,7 @@
     cursor: pointer;
     transition: background 0.2s;
     overflow: hidden;
+    width: 100%;
 }
 
 .meal-item:hover {
@@ -91,7 +92,7 @@
 }
 
 
-/* Hamburger Menu Styles */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -129,7 +130,7 @@
     transform: rotate(-45deg);
 }
 
-/* Mobile Sidebar Behavior */
+
 @media (max-width: 879px) {
     .hamburger {
         display: flex;
@@ -142,7 +143,7 @@
         font-size: small;
     }
 
-    /* 
+
     h2,
     h1,
     h3,
@@ -150,8 +151,8 @@
     h5,
     h6,
     div {
-        font-;
-    } */
+        font-size: medium;
+    }
 
     .sidebar-container {
         position: absolute;
@@ -188,16 +189,10 @@
         right: 0;
         margin-top: -5px;
         justify-content: end;
+        gap: 5px;
     }
 
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
-        width: fit-content;
-        text-align: center;
-        font-size: small;
-    }
+
 
     .welcome {
         background: rgba(101, 67, 33, 0.25);

@@ -2,26 +2,47 @@ import { useState, useEffect } from 'react';
 import { fetchMealsByCategory } from '../Services/mealServices';
 import { type Meal } from '../types';
 
-
 interface MealSidebarProps {
     onSelectMeal: (meal: Meal) => void;
 }
 
-type MealCategory = 'Breakfast' | 'Lunch';
+type MealCategory = 'Breakfast' | 'Lunch' | 'Dinner'; // Added more categories
 
 export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
     const [activeCategory, setActiveCategory] = useState<MealCategory>('Breakfast');
-    const [meals, setMeals] = useState<any[]>([]);
+    const [meals, setMeals] = useState<Meal[]>([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const loadMeals = async () => {
             setLoading(true);
+            setError(null);
 
-            const category = activeCategory === 'Breakfast' ? 'Breakfast' : 'Lunch';
-            const categoryMeals = await fetchMealsByCategory(category);
-            setMeals(categoryMeals);
-            setLoading(false);
+            try {
+                let categoryName = '';
+                switch (activeCategory) {
+                    case 'Breakfast':
+                        categoryName = 'Breakfast';
+                        break;
+                    case 'Lunch':
+                        categoryName = 'Seafood'; // TheMealDB doesn't have "Lunch" category
+                        break;
+                    case 'Dinner':
+                        categoryName = 'Beef';
+                        break;
+                    default:
+                        categoryName = 'Breakfast';
+                }
+
+                const categoryMeals = await fetchMealsByCategory(categoryName);
+                setMeals(categoryMeals);
+            } catch (err) {
+                console.error(`Error fetching ${activeCategory} meals:`, err);
+                setError(`Failed to load ${activeCategory} meals. Try again later.`);
+            } finally {
+                setLoading(false);
+            }
         };
 
         loadMeals();
@@ -33,33 +54,56 @@ export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
                 <button
                     className={activeCategory === 'Breakfast' ? 'active' : ''}
                     onClick={() => setActiveCategory('Breakfast')}
+                    aria-label="Show breakfast meals"
                 >
                     Breakfast
                 </button>
                 <button
                     className={activeCategory === 'Lunch' ? 'active' : ''}
                     onClick={() => setActiveCategory('Lunch')}
+                    aria-label="Show lunch meals"
                 >
                     Lunch
+                </button>
+                <button
+                    className={activeCategory === 'Dinner' ? 'active' : ''}
+                    onClick={() => setActiveCategory('Dinner')}
+                    aria-label="Show dinner meals"
+                >
+                    Dinner
                 </button>
             </div>
 
             <div className="meal-list">
                 {loading ? (
-                    <div className="loading">Loading meals...</div>
+                    <div className="loading">Loading {activeCategory.toLowerCase()} meals...</div>
+                ) : error ? (
+                    <div className="error">{error}</div>
                 ) : meals.length > 0 ? (
                     meals.map((meal) => (
-                        <div
+                        <button
                             key={meal.idMeal}
                             className="meal-item"
                             onClick={() => onSelectMeal(meal)}
+                            aria-label={`Select ${meal.strMeal}`}
                         >
-                            <img src={meal.strMealThumb} alt={meal.strMeal} />
+                            <img
+                                src={meal.strMealThumb}
+                                alt={meal.strMeal}
+                                onError={(e) => {
+                                    // Fallback if image fails to load
+                                    (e.target as HTMLImageElement).src = '/placeholder-food.jpg';
+                                }}
+                            />
                             <span>{meal.strMeal}</span>
-                        </div>
+                        </button>
                     ))
                 ) : (
-                    <div className="no-meals">Lunch soon lauching</div>
+                    <div className="no-meals">
+                        {activeCategory === 'Lunch'
+                            ? 'Lunch options coming soon!'
+                            : 'No meals found'}
+                    </div>
                 )}
             </div>
         </div>

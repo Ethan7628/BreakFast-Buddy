@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignupForm() {
@@ -8,6 +8,7 @@ export default function SignupForm() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -21,7 +22,7 @@ export default function SignupForm() {
             setName("");
             setEmail("");
             setPassword("");
-
+            navigate('/preferences')
         } catch (error) {
             let errorCode = "unknown";
             let errorMessage = "An unknown error occurred.";

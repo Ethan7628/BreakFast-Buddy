@@ -32,6 +32,7 @@
 .nav-links {
     display: flex;
     gap: 20px;
+    padding-right: 10px;
 }
 
 .nav-links a {
@@ -46,6 +47,7 @@
 .nav-links a:hover {
     background-color: #dbae84;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .main-content {

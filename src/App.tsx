@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { Preferences } from "./pages/Preferences";
-import { Dashboard } from "./components/DashBorad";
+import { Dashboard } from "./pages/DashBorad";
 import { Layout } from "./components/Layout";
 import "./styles/main.css";
 import "./styles/forms.css";

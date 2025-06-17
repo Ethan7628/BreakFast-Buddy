@@ -57,7 +57,7 @@ export const fetchMealDetails = async (id: string): Promise<Meal> => {
         }
 
         const meal = data.meals[0];
-        // Extract ingredients (up to 20 ingredients)
+
         const ingredients = [];
         for (let i = 1; i <= 20; i++) {
             const ingredient = meal[`strIngredient${i}`];

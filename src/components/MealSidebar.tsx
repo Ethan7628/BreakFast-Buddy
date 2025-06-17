@@ -91,7 +91,7 @@ export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
                                 src={meal.strMealThumb}
                                 alt={meal.strMeal}
                                 onError={(e) => {
-                                    // Fallback if image fails to load
+
                                     (e.target as HTMLImageElement).src = '/placeholder-food.jpg';
                                 }}
                             />

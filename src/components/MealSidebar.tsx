@@ -6,7 +6,7 @@ interface MealSidebarProps {
     onSelectMeal: (meal: Meal) => void;
 }
 
-type MealCategory = 'Breakfast' | 'Lunch' | 'Dinner'; // Added more categories
+type MealCategory = 'Breakfast' | 'Lunch' | 'Dinner';
 
 export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
     const [activeCategory, setActiveCategory] = useState<MealCategory>('Breakfast');
@@ -26,7 +26,7 @@ export const MealSidebar = ({ onSelectMeal }: MealSidebarProps) => {
                         categoryName = 'Breakfast';
                         break;
                     case 'Lunch':
-                        categoryName = 'Seafood'; // TheMealDB doesn't have "Lunch" category
+                        categoryName = 'Seafood';
                         break;
                     case 'Dinner':
                         categoryName = 'Beef';

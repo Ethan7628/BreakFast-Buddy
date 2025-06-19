@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthRoute } from "./components/AuthRoute";
+import { AuthRoute, AdminRoute } from "./components/AuthRoute";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
@@ -20,6 +20,8 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route element={<AuthRoute />}>
             <Route path="preferences" element={<Preferences />} />
+          </Route>
+          <Route element={<AdminRoute />}>
             <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Route>

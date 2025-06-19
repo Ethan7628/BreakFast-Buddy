@@ -9,6 +9,7 @@ import Logo from '../images/ChatGPT Image Jun 1, 2025, 04_11_23 PM.png';
 
 export const Layout = () => {
     const [user] = useAuthState(auth);
+    const adminEmail = "kusasirakwe.ethan.upti@gmail.com";
 
     const handleLogout = () => {
         signOut(auth);
@@ -26,7 +27,8 @@ export const Layout = () => {
                         {user ? (
                             <>
                                 <Link to="/preferences">Preferences</Link>
-                                <Link to="/dashboard">Dashboard</Link>
+                                {user.email === adminEmail && (<Link to="/dashboard">Dashboard</Link>)}
+
                                 <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'red', cursor: 'pointer' }}>
                                     Logout
                                 </button>

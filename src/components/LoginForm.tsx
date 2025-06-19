@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link } from "react-router-dom";
 
+
 export const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,6 +22,7 @@ export const LoginForm = () => {
             console.error(err);
         }
     };
+
 
     return (
         <div className="LoginSignUp">

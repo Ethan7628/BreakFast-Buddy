@@ -31,7 +31,7 @@ export const Dashboard = () => {
 
                 setPreferences(prefData);
 
-                // Calculate stats
+
                 const mealCounts: Record<string, number> = {};
                 const drinkCounts: Record<string, number> = {};
 
@@ -99,6 +99,7 @@ export const Dashboard = () => {
                                 <th>Meal</th>
                                 <th>Drink</th>
                                 <th>Dietary Restrictions</th>
+                                <th>Special Notes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,6 +114,7 @@ export const Dashboard = () => {
                                             ? pref.dietaryRestrictions.join(', ')
                                             : 'None'}
                                     </td>
+                                    <td>{pref.specialNotes || '-'}</td>
                                 </tr>
                             ))}
                         </tbody>

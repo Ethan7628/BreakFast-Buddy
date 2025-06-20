@@ -32,5 +32,3 @@ export interface Meal {
 }
 
 
-
-// Add this to your existing types.ts file

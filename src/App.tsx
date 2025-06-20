@@ -1,3 +1,4 @@
+// Core Application Structure
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthRoute, AdminRoute } from "./components/AuthRoute";
 import { Home } from "./pages/Home";

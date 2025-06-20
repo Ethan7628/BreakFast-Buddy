@@ -25,7 +25,7 @@ export const MealSuggestions = () => {
 
     return (
         <div className="meal-suggestions">
-            <h2>Meal Inspiration</h2>
+            <h2 style={{ justifySelf: "center" }}>Meal Inspiration</h2>
 
             <div className="search-container">
                 <input
@@ -33,8 +33,9 @@ export const MealSuggestions = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search for meals..."
+                    className='form-control'
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button onClick={handleSearch} >Search</button>
             </div>
 
             {searchResults.length > 0 ? (

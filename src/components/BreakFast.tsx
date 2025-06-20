@@ -7,6 +7,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '../firebase';
 import '../styles/meals.css';
 import '../styles/layout.css';
+import '../styles/forms.css'
 import { MealSuggestions } from "./MealSuggestions";
 
 interface BreakfastFormProps {
@@ -213,7 +214,7 @@ export const BreakfastForm = ({ }: BreakfastFormProps) => {
 
                     <button
                         type="submit"
-                        className="btn btn-block"
+                        className="btn btn-block smbtn"
                         disabled={!validateForm() || isSubmitting}
                     >
                         {isSubmitting ? (

@@ -7,6 +7,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '../firebase';
 import '../styles/meals.css';
 import '../styles/layout.css';
+import { MealSuggestions } from "./MealSuggestions";
 
 interface BreakfastFormProps {
     selectedMeal?: Meal;
@@ -225,6 +226,7 @@ export const BreakfastForm = ({ }: BreakfastFormProps) => {
                     </button>
                 </form>
             )}
+            < MealSuggestions />
         </div>
     );
 };

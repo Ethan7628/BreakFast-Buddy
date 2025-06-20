@@ -16,7 +16,7 @@
 .meal-sidebar {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 160vh;
     width: 100%;
 }
 

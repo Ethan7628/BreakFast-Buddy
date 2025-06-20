@@ -211,4 +211,8 @@ select textarea.form-control {
     .search-container button {
         width: 100%;
     }
+
+    .smbtn {
+        width: 100%;
+    }
 }

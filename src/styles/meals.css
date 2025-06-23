@@ -18,6 +18,7 @@
     flex-direction: column;
     height: 160vh;
     width: 100%;
+
 }
 
 .category-tabs {
@@ -45,7 +46,7 @@
 }
 
 .meal-list {
-    overflow-y: auto;
+    overflow-y: hidden;
     flex-grow: 1;
 }
 

@@ -46,9 +46,7 @@ export const Layout = () => {
                 <Outlet />
             </main>
             <footer className="footer">
-
                 <p >Ethan Kusasirakwe 2025 &copy;</p>
-
             </footer>
 
         </>

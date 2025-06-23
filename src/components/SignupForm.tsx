@@ -8,6 +8,7 @@ export default function SignupForm() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [signUp, setsignUp] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +19,7 @@ export default function SignupForm() {
         try {
             const auth = getAuth();
             await createUserWithEmailAndPassword(auth, email, password);
-            alert(`Signup successful! Welcome ${name}!`);
+            setsignUp(true);
             setName("");
             setEmail("");
             setPassword("");
@@ -44,6 +45,11 @@ export default function SignupForm() {
                 {error && (
                     <div className="alert alert-danger text-red-600 bg-red-100 p-2 rounded mb-4">
                         {error}
+                    </div>
+                )}
+                {signUp && (
+                    <div className="alert alert-success">
+                        Signup successful! Welcome {name}!
                     </div>
                 )}
                 <form onSubmit={handleSubmit} className="space-y-4">

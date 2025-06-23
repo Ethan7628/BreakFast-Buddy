@@ -58,7 +58,7 @@
     cursor: pointer;
     transition: background 0.2s;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
 }
 
 .meal-item:hover {
